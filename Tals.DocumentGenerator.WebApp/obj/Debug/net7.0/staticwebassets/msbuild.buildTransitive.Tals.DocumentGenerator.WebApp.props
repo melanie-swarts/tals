@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Tals.DocumentGenerator.WebApp.props" />
+</Project>

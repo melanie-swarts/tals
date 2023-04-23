@@ -1,0 +1,14 @@
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\bin\Debug\net7.0\Tals.Data.deps.json
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\bin\Debug\net7.0\Tals.Data.runtimeconfig.json
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\bin\Debug\net7.0\Tals.Data.dll
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\bin\Debug\net7.0\Tals.Data.pdb
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.csproj.AssemblyReference.cache
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.AssemblyInfoInputs.cache
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.AssemblyInfo.cs
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.csproj.CoreCompileInputs.cache
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.dll
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\refint\Tals.Data.dll
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.pdb
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\Tals.Data.genruntimeconfig.cache
+C:\Projects\TPW\Tals.DocumentGenerator\Tals.Data\obj\Debug\net7.0\ref\Tals.Data.dll

@@ -1,0 +1,31 @@
+﻿@page "/counter"
+@inject IJSRuntime JSRuntime
+
+<div>
+    <textarea @ref="TextArea"></textarea>
+    <button @onclick="SaveContent">Save</button>
+</div>
+
+@code {
+    private ElementReference TextArea;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeTinyMCE", TextArea);
+        }
+    }
+
+    private async Task SaveContent()
+    {
+        var content = await JSRuntime.InvokeAsync<string>("getTinyMCEContent", TextArea);
+        // Call a method to save the content to your server/database
+        await SaveContentToDatabase(content);
+    }
+
+    private async Task SaveContentToDatabase(string content)
+    {
+        // Implement saving the content to the database
+    }
+}

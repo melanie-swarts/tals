@@ -1,0 +1,117 @@
+﻿@using System.Threading.Tasks
+@using Microsoft.AspNetCore.Components
+@using Tals.WebApp.Models;
+@page "/"
+
+<PageTitle>Dashboard</PageTitle>
+
+<h1>Applications</h1>
+
+<div class="tab-content system-card-container">
+    <div role="tabpanel" class="tab-pane active">
+        <div class="row">
+            @foreach (var system in SystemModel)
+            {
+                <div class="col-md-6 system-card" data-show-card="@system.ShowSystemCard" data-allow-login="@system.ShowLoginButton" data-allow-install="@system.ShowInstallButton">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="pull-left">
+
+                                <strong>@system.DisplayName</strong>
+                            </div>
+                            <div class="pull-right">
+                                @if (system.ShowSystemOwnerOptions)
+                                {
+                                    <ul class="list-unstyled list-inline">
+                                        <li class="menu-item">
+                                            <a href="@($"SystemRequest/Index/{system.SystemId}/{system.Name}")" title="Review System Requests">
+                                                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Review Requests
+                                                <span id="system-access-request-badge-@system.SystemId" class="badge">@system.SystemRequestCount</span>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="@($"SystemUser/Index/{system.SystemId}/{system.Name}")" title="Manage Users">
+                                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Manage Users
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="@($"SystemSetting/Index/{system.SystemId}/{system.Name}")" title="Manage Claims">
+                                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                }
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="media">
+                                <div class="media-left media-top">
+                                    <img class="media-object pull-left" style="margin-right: 10px" src="@("/images/wcg-crest.png")" alt="@system.DisplayName">
+                                </div>
+                                <div class="media-body">
+                                    <div class="system-card-content">
+                                        <div class="pull-left">
+                                            <p>@system.Description</p>
+                                        </div>
+                                        <div class="pull-right">
+                                            <button @onclick="() => RequestAccess(system)" style="@(system.ShowRequestButton ? "display:inline" : "display:none")" id="system-request-submit-@system.SystemId" data-system-id="@system.SystemId" class="btn btn-primary pull-right system-request" title="Request access to @system.DisplayName">
+                                                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Request
+                                            </button>
+                                            <button @onclick="() => CancelRequest(system)" style="@(system.ShowCancelButton ? "display:inline" : "display:none")" id="system-request-cancel-@system.SystemId" data-system-id="@system.SystemId" class="btn btn-danger pull-right cancel-request" title="Cancel request for @system.DisplayName">
+                                                <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Cancel
+                                            </button>
+                                            <button @onclick="() => Login(system)" style="@(system.ShowLoginButton ? "display:inline" : "display:none")" id="system-login-@system.SystemId" data-system-id="@system.SystemId" data-block-login="@system.BlockSystemLogin" data-system-message="@system.AnnouncementMessage" data-system-name="@system.DisplayName" class="btn btn-success pull-right system-login" title="Login to @system.DisplayName">
+                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Login
+                            </button>
+                            <button @onclick="() => Install(system)" style="@(system.ShowInstallButton ? "display:inline" : "display:none")" id="system-install-@system.SystemId" data-system-id="@system.SystemId" data-install-url="@system.InstallUrl" class="btn btn-success pull-right system-install" title="Install @system.DisplayName">
+                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Install
+                            </button>
+                            </div>
+                            <div class="clearfix"></div>
+                            </div>
+                            <ul class="list-unstyled list-inline">
+                            <li class="bottom pull-left">
+                            <a href="@($"Application/Index/{system.SystemId}")"><small>Need Help Getting Access?</small></a>
+                            </li>
+                            <li class="bottom pull-right">
+                            <small class="system-last-login" id="system-last-login-@system.SystemId">@system.LastLogin</small>
+                            </li>
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            }
+                            </div>
+                            </div>
+
+                            </div>
+
+@code {
+// Your model should be here
+private IEnumerable<SystemViewModel> SystemModel { get; set; }
+
+        private async Task RequestAccess(SystemViewModel system)
+        {
+            // Handle request access logic here
+        }
+
+    private async Task CancelRequest(SystemViewModel system)
+        {
+            // Handle cancel request logic here
+        }
+
+    private async Task Login(SystemViewModel system)
+        {
+            // Handle login logic here
+        }
+
+    private async Task Install(SystemViewModel system)
+        {
+            // Handle install logic here
+        }
+}
+
+

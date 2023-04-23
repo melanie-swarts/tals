@@ -1,0 +1,34 @@
+﻿<div class="top-row navbar navbar-dark" style="padding-bottom: 15px; padding-top: 15px;">
+    <div class="container-fluid">
+        <img src="/images/wcg-logo.png" class="navbar-img" href="" />
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item" style="padding-top: 15px; margin:0;">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All"style="border-radius: 0px !important;">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item"style="margin:0;">
+            <NavLink class="nav-link" href="counter"style="border-radius: 0px !important;">
+                <span class="oi oi-file" aria-hidden="true"></span> Doc Gen
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
